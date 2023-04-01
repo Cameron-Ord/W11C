@@ -22,6 +22,15 @@ let moves = [
 
     },
 
+    {
+
+
+        move: `Outrage`,
+
+        damage: `120`
+
+    }
+
 
 
 ];
@@ -31,38 +40,6 @@ let moves = [
 let attack_json = Cookies.get(`attack`);
 
 let attack_moves = [];
-
-
-
-function attack(attack_move) {
-
-
-    let attacks = {
-
-
-        move: `${attack_move[`target`].getAttribute(`attack_name`)}`,
-
-        damage: `${attack_move[`target`].getAttribute(`attack_damage`)}`
-
-
-    }
-
-    attack_moves.push(attacks);
-
-    let attack_json = JSON.stringify(attack_moves);
-
-    Cookies.set(`attack`, attack_json);
-
-};
-
-let chosen_move = document.querySelectorAll(`.moves`);
-
-for (let counter = 0; counter < chosen_move.length; counter = counter + 1) {
-
-
-    chosen_move[counter].addEventListener(`click`, attack);
-
-};
 
 let get_pokemon = Cookies.get(`selection`);
 
@@ -112,6 +89,15 @@ if (chosen_pokemon === undefined) {
         attack_damage="${moves[counter][`damage`]}"
         >Dragon Pulse</button>
 
+        <button class="moves" 
+        attack_name="${moves[counter][`move`]}"
+        attack_damage="${moves[counter][`damage`]}"
+        >Hyper Voice</button>
+        
+        <button class="moves" 
+        attack_name="${moves[counter][`move`]}"
+        attack_damage="${moves[counter][`damage`]}"
+        >Outrage</button>
         </span>
         </article>
         `
@@ -124,6 +110,35 @@ if (chosen_pokemon === undefined) {
 
 };
 
+function attack(attack_move) {
+
+
+    let attacks = {
+
+
+        move: `${attack_move[`target`].getAttribute(`attack_name`)}`,
+
+        damage: `${attack_move[`target`].getAttribute(`attack_damage`)}`
+
+
+    }
+
+    attack_moves.push(attacks);
+
+    let attack_json = JSON.stringify(attack_moves);
+
+    Cookies.set(`attack`, attack_json);
+
+};
+
+let chosen_move = document.querySelectorAll(`.moves`);
+
+for (let counter = 0; counter < chosen_move.length; counter = counter + 1) {
+
+
+    chosen_move[counter].addEventListener(`click`, attack);
+
+};
 
 
 let enemy = [{
@@ -187,4 +202,4 @@ for (let counter = 0; counter < enemy.length; counter = counter = +1) {
     );
 
 
-}
+};

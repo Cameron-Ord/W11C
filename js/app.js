@@ -37,7 +37,7 @@ let pokemon_json = Cookies.get(`selection`);
 
 let selection_pokemon = [];
 
-function choose_your_pokemon(pokemon_choice){
+function choose_your_pokemon(pokemon_choice) {
 
     let pokemons = {
 
@@ -49,21 +49,21 @@ function choose_your_pokemon(pokemon_choice){
 
     }
 
-selection_pokemon.push(pokemons);
-let pokemon_json = JSON.stringify(selection_pokemon);
-Cookies.set(`selection`, pokemon_json);
+    selection_pokemon.push(pokemons);
+    let pokemon_json = JSON.stringify(selection_pokemon);
+    Cookies.set(`selection`, pokemon_json);
 
 };
 
 
 let choose_your_pokemon_page = document.querySelector(`#section_main`);
 
-for(let counter = 0; counter < pokemon.length; counter = counter +1){
+for (let counter = 0; counter < pokemon.length; counter = counter + 1) {
 
-choose_your_pokemon_page.insertAdjacentHTML(`beforeend`, 
+    choose_your_pokemon_page.insertAdjacentHTML(`beforeend`,
 
 
-`<article>
+        `<article>
 <span class="main_span">
 
 <h2>${pokemon[counter][`name`]}</h3>
@@ -86,6 +86,6 @@ pokemon_image="${pokemon[counter][`image_url`]}"
 
 let chosen_pokemon = document.querySelectorAll(`.clickme`);
 
-for(let counter = 0; counter < chosen_pokemon.length; counter = counter +1){
+for (let counter = 0; counter < chosen_pokemon.length; counter = counter + 1) {
     chosen_pokemon[counter].addEventListener(`click`, choose_your_pokemon);
 }
