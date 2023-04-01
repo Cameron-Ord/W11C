@@ -25,11 +25,15 @@ min-height: 70vh;
 
 >#section_main{
 
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
     display: grid;
     width: 100%;
 
     >article{
-
+        align-items: center;
+        justify-items: center;
 
         width: 100%;
 

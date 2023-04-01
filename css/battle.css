@@ -14,10 +14,15 @@ body {
   min-height: 70vh;
 }
 #page_main > #section_main {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
   display: grid;
   width: 100%;
 }
 #page_main > #section_main > article {
+  align-items: center;
+  justify-items: center;
   width: 100%;
   display: grid;
 }

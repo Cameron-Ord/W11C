@@ -35,7 +35,7 @@ let pokemon = [{
 
 let pokemon_json = Cookies.get(`selection`);
 
-selection_pokemon = [];
+let selection_pokemon = [];
 
 function choose_your_pokemon(pokemon_choice){
 
@@ -50,7 +50,7 @@ function choose_your_pokemon(pokemon_choice){
     }
 
 selection_pokemon.push(pokemons);
-pokemon_json = JSON.stringify(selection_pokemon);
+let pokemon_json = JSON.stringify(selection_pokemon);
 Cookies.set(`selection`, pokemon_json);
 
 };

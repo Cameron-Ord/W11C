@@ -45,6 +45,7 @@ body {
   font-size: 3.5em;
 }
 #page_main > #section_main > article > .main_span > img {
+  box-shadow: 10px;
   height: 225px;
   width: 225px;
 }
