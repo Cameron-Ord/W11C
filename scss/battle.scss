@@ -42,20 +42,43 @@ min-height: 70vh;
         >.main_span{
 
 
+            grid-template-rows: 1fr 100px 1fr 1fr;
+
             align-items: center;
             justify-items: center;
          width: 80%;
 
             display: grid;
 
+            >.buttons{
 
-            >.moves{
+              
+
+                display: grid;
+
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+
+                align-items: center;
+
+                justify-items: center;
 
 
 
-                width: 25%;
+                >.moves{
+
+
+
+                    height: 50px;
+
+                    width: 75%;
+    
+                }
+
 
             }
+
+       
+
 
             >img{
 
