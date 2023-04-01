@@ -37,13 +37,16 @@ let moves = [
 
 
 
-let attack_json = Cookies.get(`attack`);
 
 let attack_moves = [];
 
 let get_pokemon = Cookies.get(`selection`);
 
 let chosen_pokemon = Cookies.get(`selection`);
+
+let get_attack = Cookies.get(`attack`);
+
+let chosen_attack = Cookies.get(`attack`);
 
 
 if (chosen_pokemon === undefined) {
@@ -129,6 +132,33 @@ function attack(attack_move) {
 
     Cookies.set(`attack`, attack_json);
 
+    let attack_json_parse = JSON.parse(get_attack);
+    
+    for(let counter = 0; counter < attack_json_parse.length; counter = counter = +1){
+
+
+        if(attack_json_parse[counter][`move`] === `Air Slash`){
+
+            console.log(`used attack`);
+
+        }else if(attack_json_parse[counter][`move`] === `Dragon Pulse`){
+
+
+            console.log(`used attack`);
+
+        }else if(attack_json_parse[counter][`move`] === `Hyper Voice`){
+
+            console.log(`used attack`);
+
+        }else if(attack_json_parse[counter][`move`] === `Outrage`){
+
+            console.log(`used attack`);
+
+        };
+
+        
+    };
+
 };
 
 let chosen_move = document.querySelectorAll(`.moves`);
@@ -139,6 +169,8 @@ for (let counter = 0; counter < chosen_move.length; counter = counter + 1) {
     chosen_move[counter].addEventListener(`click`, attack);
 
 };
+
+
 
 
 let enemy = [{
