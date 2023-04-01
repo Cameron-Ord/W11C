@@ -3,7 +3,9 @@ let pokemon = [{
 
     name: ` Magikarp`,
 
-    image_url: `/images/magikarp.jpg`
+    image_url: `/images/magikarp.jpg`,
+
+    health: `80`
 
 },
 
@@ -12,8 +14,9 @@ let pokemon = [{
 
     name: `Rayquaza`,
 
-    image_url: `/images/rayqauza.png`
+    image_url: `/images/rayqauza.png`,
 
+    health: `150`
 
 },
 
@@ -22,7 +25,9 @@ let pokemon = [{
 
     name: `Haunter`,
 
-    image_url: `/images/haunter.png`
+    image_url: `/images/haunter.png`,
+
+    health: `100`
 }
 
 
@@ -38,7 +43,9 @@ function choose_your_pokemon(pokemon_choice){
 
         name: `${pokemon_choice[`target`].getAttribute(`pokemon_name`)}`,
 
-        image_url: `${pokemon_choice[`target`].getAttribute(`pokemon_image`)}`
+        image_url: `${pokemon_choice[`target`].getAttribute(`pokemon_image`)}`,
+
+        health: `${pokemon_choice[`target`].getAttribute(`pokemon_health`)}`
 
     }
 
@@ -66,16 +73,14 @@ choose_your_pokemon_page.insertAdjacentHTML(`beforeend`,
 <a href="/pages/battle.html"><button class="clickme"
 
 pokemon_name="${pokemon[counter][`name`]}"
-
+pokemon_health="${pokemon[counter][`health`]}"
 pokemon_image="${pokemon[counter][`image_url`]}"
 
 >CHOOSE POKEMON</button></a>
 
 
 </span>
-</article>
-
-`);
+</article>`);
 
 };
 

@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #D1DEDE;
+}
+
+#page_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  min-height: 70vh;
+}
+#page_main > #section_main {
+  display: grid;
+  width: 100%;
+}
+#page_main > #section_main > article {
+  width: 100%;
+  display: grid;
+}
+#page_main > #section_main > article > .main_span {
+  width: 80%;
+  display: grid;
+}
+#page_main > #section_main > article > .main_span > img {
+  height: 225px;
+  width: 225px;
+}
+
+/*# sourceMappingURL=battle.css.map */

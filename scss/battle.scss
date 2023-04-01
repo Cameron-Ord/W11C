@@ -1,0 +1,60 @@
+@use "header";
+
+@use "footer";
+
+
+* {
+
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #D1DEDE;
+
+}
+
+
+#page_main{
+
+width: 100%;
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+min-height: 70vh;
+
+>#section_main{
+
+    display: grid;
+    width: 100%;
+
+    >article{
+
+
+        width: 100%;
+
+        display: grid;
+
+        >.main_span{
+
+
+
+         width: 80%;
+
+            display: grid;
+
+
+
+            >img{
+
+
+                height: 225px;
+                width: 225px;
+            }
+
+        }
+
+    }
+}
+}
+
