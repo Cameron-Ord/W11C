@@ -130,9 +130,9 @@ let enemy = [{
 
 
 
-    name: `guzma`,
+    name: `Deoxsys`,
 
-    image_url: `/images/guzma.png`,
+    image_url: `/images/deoxsys.jpg`,
 
     health: `300`
 
@@ -145,20 +145,46 @@ let enemy_json = Cookies.get(`enemy`);
 
 let enemy_array = [];
 
-function enemy_selection(rival){
+function enemy_selection(rival) {
 
     let rival_pokemon = {
 
 
         name: `${rival[`target`].getAttribute(`rival_pokemon`)}`,
 
-        image_url:`${rival[`target`].getAttribute(`rival_pokemon_image`)}`,
+        image_url: `${rival[`target`].getAttribute(`rival_pokemon_image`)}`,
 
-        health:`${rival[`target`].getAttribute(`rival_pokemon_health`)}`
-
-
-
-
+        health: `${rival[`target`].getAttribute(`rival_pokemon_health`)}`
     }
 
+    enemy_array.push(rival_pokemon);
+    let enemy_json = JSON.stringify(enemy_array);
+    Cookies.set(`enemy`, enemy_json);
+
+
 };
+
+
+let enemy_page = document.querySelector(`#section_main`);
+
+for (let counter = 0; counter < enemy.length; counter = counter = +1) {
+
+    enemy_page.insertAdjacentHTML(`beforeend`,
+
+        `     <article>
+<span class="main_span">
+
+<h2>${enemy[counter][`name`]}</h2>
+
+<p>${enemy[counter][`health`]}</p>
+
+<img src="${enemy[counter][`image_url`]}">
+</span>
+</article>
+`
+
+
+    );
+
+
+}
