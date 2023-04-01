@@ -42,12 +42,20 @@ min-height: 70vh;
         >.main_span{
 
 
-
+            align-items: center;
+            justify-items: center;
          width: 80%;
 
             display: grid;
 
 
+            >.moves{
+
+
+
+                width: 25%;
+
+            }
 
             >img{
 

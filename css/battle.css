@@ -27,8 +27,13 @@ body {
   display: grid;
 }
 #page_main > #section_main > article > .main_span {
+  align-items: center;
+  justify-items: center;
   width: 80%;
   display: grid;
+}
+#page_main > #section_main > article > .main_span > .moves {
+  width: 25%;
 }
 #page_main > #section_main > article > .main_span > img {
   height: 225px;

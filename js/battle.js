@@ -1,65 +1,75 @@
 let moves = [
     {
-    
-    move : `Air Slash`,
-    
-    damage: `75`
-    
+
+        move: `Air Slash`,
+
+        damage: `75`
+
     },
-    
+
     {
-    
-        move : `Dragon Pulse`,
-    
-        damage : `85`
+
+        move: `Dragon Pulse`,
+
+        damage: `85`
+    },
+
+    {
+
+        move: `Hyper Voice`,
+
+        damage: `80`
+
+    },
+
+
+
+];
+
+
+
+let attack_json = Cookies.get(`attack`);
+
+let attack_moves = [];
+
+
+
+function attack(attack_move) {
+
+
+    let attacks = {
+
+
+        move: `${attack_move[`target`].getAttribute(`attack_name`)}`,
+
+        damage: `${attack_move[`target`].getAttribute(`attack_damage`)}`
+
+
     }
-    
-    ];
-    
-    
-    
-    let attack_json = Cookies.get(`attack`);
-    
-    let attack_moves = [];
-    
-    
-    
-    function attack(attack_move){
-    
-    
-        let attacks = {
-    
-    
-            move: `${attack_move[`target`].getAttribute(`attack_name`)}`,
-    
-            damage: `${attack_move[`target`].getAttribute(`attack_damage`)}`
-    
-    
-        }
-    
-        attack_moves.push(attacks);
-    
-        let attack_json = JSON.stringify(attack_moves);
-    
-        Cookies.set(`attack`, attack_json);
-    
-    };
-    
-    let chosen_move = document.querySelectorAll(`.moves`);
-    
-    for(let counter = 0; counter < chosen_move.length; counter = counter +1){
-    
-    
-    chosen_move[counter].addEventListener(`click`,attack);
-    
-    };
 
-    let get_pokemon = Cookies.get(`selection`);
+    attack_moves.push(attacks);
 
-    let chosen_pokemon = Cookies.get(`selection`);
-    
+    let attack_json = JSON.stringify(attack_moves);
 
-if(chosen_pokemon === undefined) {
+    Cookies.set(`attack`, attack_json);
+
+};
+
+let chosen_move = document.querySelectorAll(`.moves`);
+
+for (let counter = 0; counter < chosen_move.length; counter = counter + 1) {
+
+
+    chosen_move[counter].addEventListener(`click`, attack);
+
+};
+
+let get_pokemon = Cookies.get(`selection`);
+
+let chosen_pokemon = Cookies.get(`selection`);
+
+
+if (chosen_pokemon === undefined) {
 
 
     let battle_page = document.querySelector(`#section_main`);
@@ -68,7 +78,7 @@ if(chosen_pokemon === undefined) {
 
 
 
-}else{
+} else {
 
     let battle_page = document.querySelector(`#section_main`);
 
@@ -76,13 +86,13 @@ if(chosen_pokemon === undefined) {
 
 
 
-    for(let counter = 0; counter < json_parse.length; counter = counter +1){
+    for (let counter = 0; counter < json_parse.length; counter = counter + 1) {
 
 
 
-        battle_page.insertAdjacentHTML(`beforeend`, 
-        
-        `<article>
+        battle_page.insertAdjacentHTML(`beforeend`,
+
+            `<article>
         <span class="main_span">
 
         <h2>${json_parse[counter][`name`]}</h2>
@@ -114,3 +124,41 @@ if(chosen_pokemon === undefined) {
 
 };
 
+
+
+let enemy = [{
+
+
+
+    name: `guzma`,
+
+    image_url: `/images/guzma.png`,
+
+    health: `300`
+
+
+
+}];
+
+
+let enemy_json = Cookies.get(`enemy`);
+
+let enemy_array = [];
+
+function enemy_selection(rival){
+
+    let rival_pokemon = {
+
+
+        name: `${rival[`target`].getAttribute(`rival_pokemon`)}`,
+
+        image_url:`${rival[`target`].getAttribute(`rival_pokemon_image`)}`,
+
+        health:`${rival[`target`].getAttribute(`rival_pokemon_health`)}`
+
+
+
+
+    }
+
+};
