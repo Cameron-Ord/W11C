@@ -11,7 +11,7 @@ let pokemons = [{
 
     health: `80`,
 
-    
+
     dmg: `50`
 },
 
@@ -106,12 +106,12 @@ class="clickme"
 
 };
 
-let rival =[{
+let rival = [{
 
 
     name: `deoxsys`,
 
-    health : `250`,
+    health: `250`,
 
     image_url: `/images/deoxsys.jpg`,
 
@@ -125,7 +125,7 @@ let enemy_json = Cookies.get(`enemy`);
 
 let enemy_selection = [];
 
-function choose_enemy(enemy){
+function choose_enemy(enemy) {
 
 
     let rival = {
@@ -152,12 +152,12 @@ function choose_enemy(enemy){
 };
 
 
-for(counter = 0; counter < rival.length; counter = counter +1){
+for (counter = 0; counter < rival.length; counter = counter + 1) {
 
 
     choose_your_pokemon_page.insertAdjacentHTML(`beforeend`,
-    
-    `<article>
+
+        `<article>
     <span class="main_span">
     
     <h2>${rival[counter].name}</h3>

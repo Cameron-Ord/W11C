@@ -17,14 +17,14 @@ let player_HP = Cookies.get(`player_health`);
 let comp_HP = Cookies.get(`computer_health`);
 
 
-if(parse_pokemon && parse_enemy === undefined){
+if (parse_pokemon && parse_enemy === undefined) {
 
     arena.insertAdjacentHTML(`beforeend`, `<h1> Choose a pokemon</h1>`);
-    
-    
-    }else{
-    
-    
+
+
+} else {
+
+
     arena.insertAdjacentHTML(`beforeend`, `
     <article>
     <span class="main_span">
@@ -55,49 +55,49 @@ if(parse_pokemon && parse_enemy === undefined){
     
     
 
-    `);    
-    
+    `);
+
 };
 
 
 
 
 
- function attack(details){
+function attack(details) {
 
 
-let pokemon_damage = parse_pokemon[0].dmg;
+    let pokemon_damage = parse_pokemon[0].dmg;
 
-let enemy_damage = parse_enemy[0].dmg;
+    let enemy_damage = parse_enemy[0].dmg;
 
-let comp_HP = Cookies.get(`computer_health`);
+    let comp_HP = Cookies.get(`computer_health`);
 
-let player_HP = Cookies.get(`player_health`);
+    let player_HP = Cookies.get(`player_health`);
 
-let current_player_hp = player_HP -= enemy_damage;
+    let current_player_hp = player_HP -= enemy_damage;
 
-let current_enemy_hp = comp_HP -= pokemon_damage;
+    let current_enemy_hp = comp_HP -= pokemon_damage;
 
-Cookies.set(`computer_health`, current_enemy_hp);
+    Cookies.set(`computer_health`, current_enemy_hp);
 
-Cookies.set(`player_health`, current_player_hp);
-
-
-
- };
+    Cookies.set(`player_health`, current_player_hp);
 
 
 
+};
 
 
- let attack_button = document.querySelectorAll(`.attack`);
-
- for(let counter = 0; counter < attack_button.length; counter = counter +1 ){
 
 
-attack_button[counter].addEventListener(`click`, attack)
 
- };
+let attack_button = document.querySelectorAll(`.attack`);
+
+for (let counter = 0; counter < attack_button.length; counter = counter + 1) {
+
+
+    attack_button[counter].addEventListener(`click`, attack)
+
+};
 
 
 
