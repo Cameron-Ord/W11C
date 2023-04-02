@@ -90,12 +90,13 @@ for (let counter = 0; counter < pokemons.length; counter = counter + 1) {
 
 <img src="${pokemons[counter].image_url}">
 
-<a href="/pages/battle.html"><button class="clickme"
-
+<a href="/pages/battle.html"><button 
 pokemon_name="${pokemons[counter].name}"
 pokemon_health="${pokemons[counter].health}"
 pokemon_image="${pokemons[counter].image_url}"
-pokemon_damage"${pokemons[counter].dmg}"
+pokemon_damage="${pokemons[counter].dmg}"
+
+class="clickme"
 
 >CHOOSE POKEMON</button></a>
 
@@ -163,12 +164,16 @@ for(counter = 0; counter < rival.length; counter = counter +1){
     
     <img src="${rival[counter].image_url}">
  
-    <button class="click_enemy"
+    <button
     
     enemy_name="${rival[counter].name}"
     enemy_health="${rival[counter].health}"
     enemy_image="${rival[counter].image_url}"
-    enemy_damage"${rival[counter].dmg}"
+    enemy_damage="${rival[counter].dmg}"
+
+    class="click_enemy"
+    
+
     
     >CHOOSE ENEMY</button>
     

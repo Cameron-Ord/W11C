@@ -33,13 +33,13 @@ body {
   width: 80%;
   display: grid;
 }
-#page_main > #section_main > article > .main_span > .buttons {
+#page_main > #section_main > article > .main_span > .attack {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
-#page_main > #section_main > article > .main_span > .buttons > .moves {
+#page_main > #section_main > article > .main_span > .attack > .moves {
   height: 50px;
   width: 75%;
 }
