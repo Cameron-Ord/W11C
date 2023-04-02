@@ -31,7 +31,13 @@ if(parse_pokemon && parse_enemy === undefined){
     <h2>${parse_pokemon[0].name}</h3>
     <h2>${player_HP} HP</h2>
     <img src="${parse_pokemon[0].image_url}">
-    <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Attack</button>
+
+    <span class="main_span">
+    <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Outrage</button>
+    <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Hyper Voice</button>
+    <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Dragon Pulse</button>
+    <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Air Slash</button>
+    </span>
     </span>
     </article>
     

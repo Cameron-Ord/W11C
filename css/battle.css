@@ -35,13 +35,8 @@ body {
 }
 #page_main > #section_main > article > .main_span > .attack {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
-}
-#page_main > #section_main > article > .main_span > .attack > .moves {
-  height: 50px;
-  width: 75%;
 }
 #page_main > #section_main > article > .main_span > img {
   height: 225px;
