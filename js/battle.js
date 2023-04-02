@@ -58,14 +58,15 @@ if (selected_poke && selected_enemy === undefined) {
 
 };
 
-let parse_pokemon = JSON.parse(selected_poke);
-let parse_enemy = JSON.parse(selected_enemy);
 
 
 
 
 function attack(details) {
 
+    let parse_pokemon = JSON.parse(selected_poke);
+
+    let parse_enemy = JSON.parse(selected_enemy);
 
     let pokemon_damage = parse_pokemon[0].dmg;
 
