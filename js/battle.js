@@ -58,6 +58,8 @@ if (selected_poke && selected_enemy === undefined) {
 
 };
 
+let parse_pokemon = JSON.parse(selected_poke);
+let parse_enemy = JSON.parse(selected_enemy);
 
 
 
