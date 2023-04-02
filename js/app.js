@@ -1,12 +1,18 @@
-let pokemon = [{
+
+
+
+
+let pokemons = [{
 
 
     name: ` Magikarp`,
 
     image_url: `/images/magikarp.jpg`,
 
-    health: `80`
+    health: `80`,
 
+    
+    dmg: `50`
 },
 
 {
@@ -16,8 +22,9 @@ let pokemon = [{
 
     image_url: `/images/rayqauza.png`,
 
-    health: `150`
+    health: `150`,
 
+    dmg: `50`
 },
 
 {
@@ -27,11 +34,16 @@ let pokemon = [{
 
     image_url: `/images/haunter.png`,
 
-    health: `100`
+    health: `100`,
+
+    dmg: `50`
 }
 
 
 ];
+
+
+let choose_your_pokemon_page = document.querySelector(`#section_main`);
 
 let pokemon_json = Cookies.get(`selection`);
 
@@ -45,7 +57,9 @@ function choose_your_pokemon(pokemon_choice) {
 
         image_url: `${pokemon_choice[`target`].getAttribute(`pokemon_image`)}`,
 
-        health: `${pokemon_choice[`target`].getAttribute(`pokemon_health`)}`
+        health: `${pokemon_choice[`target`].getAttribute(`pokemon_health`)}`,
+
+        dmg: `${pokemon_choice[`target`].getAttribute(`pokemon_damage`)}`
 
     }
 
@@ -53,12 +67,16 @@ function choose_your_pokemon(pokemon_choice) {
     let pokemon_json = JSON.stringify(selection_pokemon);
     Cookies.set(`selection`, pokemon_json);
 
+    Cookies.set(`player_health`, 150);
+    Cookies.set(`computer_health`, 200);
+
+
+
 };
 
 
-let choose_your_pokemon_page = document.querySelector(`#section_main`);
 
-for (let counter = 0; counter < pokemon.length; counter = counter + 1) {
+for (let counter = 0; counter < pokemons.length; counter = counter + 1) {
 
     choose_your_pokemon_page.insertAdjacentHTML(`beforeend`,
 
@@ -66,15 +84,16 @@ for (let counter = 0; counter < pokemon.length; counter = counter + 1) {
         `<article>
 <span class="main_span">
 
-<h2>${pokemon[counter][`name`]}</h3>
+<h2>${pokemons[counter].name}</h3>
 
-<img src="${pokemon[counter][`image_url`]}">
+<img src="${pokemons[counter].image_url}">
 
 <a href="/pages/battle.html"><button class="clickme"
 
-pokemon_name="${pokemon[counter][`name`]}"
-pokemon_health="${pokemon[counter][`health`]}"
-pokemon_image="${pokemon[counter][`image_url`]}"
+pokemon_name="${pokemons[counter].name}"
+pokemon_health="${pokemons[counter].health}"
+pokemon_image="${pokemons[counter].image_url}"
+pokemon_damage"${pokemons[counter].dmg}"
 
 >CHOOSE POKEMON</button></a>
 
@@ -83,6 +102,15 @@ pokemon_image="${pokemon[counter][`image_url`]}"
 </article>`);
 
 };
+
+let rival ={
+
+
+
+    
+}
+
+
 
 let chosen_pokemon = document.querySelectorAll(`.clickme`);
 
