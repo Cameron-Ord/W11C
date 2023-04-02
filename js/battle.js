@@ -2,28 +2,24 @@
 
 let selected_poke = Cookies.get(`selection`);
 
-let parse_pokemon = JSON.parse(selected_poke);
-
 let selected_enemy = Cookies.get(`enemy`);
 
-let parse_enemy = JSON.parse(selected_enemy);
-
 let arena = document.querySelector(`#section_main`);
-
-
 
 let player_HP = Cookies.get(`player_health`);
 
 let comp_HP = Cookies.get(`computer_health`);
 
 
-if (parse_pokemon && parse_enemy === undefined) {
+if (selected_poke && selected_enemy === undefined) {
 
     arena.insertAdjacentHTML(`beforeend`, `<h1> Choose a pokemon</h1>`);
 
 
 } else {
 
+    let parse_pokemon = JSON.parse(selected_poke);
+    let parse_enemy = JSON.parse(selected_enemy);
 
     arena.insertAdjacentHTML(`beforeend`, `
     <article>
