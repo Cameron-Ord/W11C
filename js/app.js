@@ -102,6 +102,7 @@ class="clickme"
 
 
 </span>
+
 </article>`);
 
 };
@@ -109,7 +110,7 @@ class="clickme"
 let rival = [{
 
 
-    name: `deoxsys`,
+    name: `Deoxsys`,
 
     health: `250`,
 

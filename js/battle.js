@@ -31,12 +31,12 @@ if (selected_poke && selected_enemy === undefined) {
     <button class="rematch">Rematch</button>
 
 
-    <span class="main_span">
+   <div>
     <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Outrage</button>
     <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Hyper Voice</button>
     <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Dragon Pulse</button>
     <button pokemon_damage="${parse_pokemon[0].dmg}" class="attack">Air Slash</button>
-    </span>
+  </div>
     </span>
     </article>
     

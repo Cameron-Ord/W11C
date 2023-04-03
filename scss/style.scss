@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #D1DEDE;
+    background-color: #FDFFFC;
 
 }
 
@@ -46,11 +46,11 @@ justify-items: center;
     
     justify-items: center;
 
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
     >article{
 
+        
 
         display: grid;
 
@@ -63,7 +63,16 @@ justify-items: center;
 
         >.main_span{
 
-            width: 100%;
+
+            background-color: #235789;
+
+            margin-top: 25px;
+
+            margin-left: 20px;
+
+            margin-right: 20px;
+
+            width: 80%;
 
             display: grid;
 
@@ -76,13 +85,21 @@ justify-items: center;
             grid-template-rows: 1fr 1fr 1fr;
 
 
+            .click_enemy{
+
+                font-size: 2.5em;
+                color: #020100;
+            }
+
+
             .clickme{
 
+                color: #020100;
                 font-size: 2.5em;
             }
 
             >h2{
-
+                color: #FDFFFC;
                 font-size: 3.5em;
             }
 
